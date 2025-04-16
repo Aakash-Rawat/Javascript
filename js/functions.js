@@ -43,6 +43,27 @@ const getUser = (email) =>
 }
 console.log(getUser("rawat_aakash@gmail.com"));
 
+
+
+// Function which returns a function (Higher Order)
+function multiply(x){
+  return function (y){
+    return x*y;
+  }
+};
+
+const double = multiply(2);
+console.log(double(5));
+
+//Breakdown of double :- Here double becomes the name of function returned by multiply function. Basically double is :- 
+/* 
+   const double = function(y){
+         return 2*y;
+      }
+*/    
+
+
+
 //++++++++++++++ NOTES +++++++++++++++++++++++++
 
 //We can't use "this" keyword with arrow function because in arrow functions "this" refers to global object.
