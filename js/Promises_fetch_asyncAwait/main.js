@@ -149,7 +149,7 @@ const anotherFunc = async () =>{
 }
 
 anotherFunc();
-console.log(myUsers.userList); // This console log will give empty array because above until the async function is fetching data and filling it to array, it allows further code outside async to run without waiting. That's why this console log is executed even before data fetched and gives empty array
+console.log(myUsers.userList); // This console log will give empty array because above, until the async function is fetching data and filling it to array, it allows further code outside async to run without waiting. That's why this console log is executed even before data fetched and gives empty array
 
 
 
@@ -202,7 +202,7 @@ Let’s say a function gives you a box (a Promise). Inside the box, there’s a 
 const box = waitAndGiveBox(); // This is a Promise
 Since the value isn’t ready yet, you say:
 
-"Hey box, when you're ready, call this function 👉"
+"Hey box, when you're ready, call this function"
 
 And that’s exactly what .then() does:
 
@@ -212,7 +212,7 @@ box.then(result => {
 });
 So:
 
-👉 Attaching .then() means:
+ Attaching .then() means:
 “I'm giving you a callback function — please call it when your work is done.”
 
 Same goes for .catch():
