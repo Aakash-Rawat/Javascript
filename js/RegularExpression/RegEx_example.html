@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Readomo Mini Search</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    input { padding: 10px; width: 100%; margin-bottom: 15px; font-size: 16px; }
+    .result { padding: 8px; border-bottom: 1px solid #eee; }
+  </style>
+</head>
+<body>
+
+  <h2>🔍 Search for users</h2>
+  <input type="text" id="searchInput" placeholder="Search username...">
+
+  <div id="results"></div>
+
+  <script>
+    const users = [
+      "readomo_writer",
+      "Avantika",
+      "rohanTheReader",
+      "Book_Lover",
+      "storyteller123",
+      "TheRealReader",
+      "vaani_writes"
+    ];
+
+    const input = document.getElementById("searchInput");
+    const results = document.getElementById("results");
+
+    input.addEventListener("input", () => {
+      const query = input.value.trim();
+      results.innerHTML = "";
+
+      if (query === "") return;
+
+      const regex = new RegExp(query, "i"); // case-insensitive match
+
+      const matched = users.filter(user => regex.test(user));
+
+      /*
+      Above line breakdown
+         const query = "rea";
+        const regex = new RegExp(query, "i");
+
+        const matched = users.filter(user => regex.test(user));
+        
+       matched = ["readomo_writer", "rohanTheReader", "TheRealReader"];
+      */
+
+      if (matched.length === 0) {
+        results.innerHTML = "<div class='result'>No matches found</div>";
+      } else {
+        matched.forEach(user => {
+          const div = document.createElement("div");
+          div.className = "result";
+          div.textContent = user;
+          results.appendChild(div);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
