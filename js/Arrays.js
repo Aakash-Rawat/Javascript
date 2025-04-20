@@ -59,8 +59,10 @@ console.log(newString);
 
 //Split method (Creates an array of any string seperated by a certain parameter present in string)
 s = "aa,ka,s,h"
-const arr = s.split(",")
+st = "My name is aakash rawat"
+const arr = st.split(" ")
 console.log(arr);
+
 
 // Array inside array and concatination of array
 const arr1 = [1,2,3];
